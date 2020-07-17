@@ -41,7 +41,10 @@ class EditorComponent extends Component {
     }
 
     update = debounce(() => {
-        console.log('Update DB')
+        this.props.noteUpdate(this.state.id, {
+            title: this.state.title,
+            body: this.state.text
+        })
     }, 1500)
 
     render() {

@@ -46,6 +46,10 @@ class App extends Component {
 
   }
 
+  noteUpdate = (id, noteObj ) => {
+    console.log(id, noteObj )
+  }
+
   render() {
     return (
       <div className='app-conntainer'>
@@ -62,6 +66,7 @@ class App extends Component {
               selectedNote={this.state.selectedNote}
               selectedNoteIndex={this.state.selectedNoteIndex}
               notes={this.state.notes}
+              noteUpdate={this.noteUpdate}
             />
           :
             null //WaterMark
