@@ -13,7 +13,25 @@ class EditorComponent extends Component {
             title: '',
             id: ''
         }
-      }
+    }
+
+    componentDidMount() {
+        this.setState({
+            text: this.props.selectedNote.body,
+            title: this.props.selectedNote.title,
+            id: this.props.selectedNote.id
+        })
+    }
+
+    componentDidUpdate() {
+        if(this.props.selectedNote.id !== this.state.id) {
+            this.setState({
+                text: this.props.selectedNote.body,
+                title: this.props.selectedNote.title,
+                id: this.props.selectedNote.id
+            })  
+        }
+    }
     
     updateBody = async (val) => {
         await this.setState({
