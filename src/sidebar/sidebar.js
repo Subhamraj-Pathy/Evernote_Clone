@@ -32,8 +32,8 @@ class SidebarComponent extends Component {
         console.log(this.state);
     }
 
-    selectNote = () => {
-        console.log('Select Note');
+    selectNote = (n, i) => {
+        this.props.selectNote(n, i)
     }
     
     deleteNote = () => {

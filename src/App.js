@@ -31,10 +31,31 @@ class App extends Component {
     })
   }
 
+  selectNote = (note, index) => {
+    this.setState({
+      selectedNoteIndex: index,
+      selectedNote: note
+    })
+  }
+
+  deleteNote = () => {
+    
+  }
+
+  newNote = () => {
+    
+  }
+
   render() {
     return (
       <div className='app-conntainer'>
-        <SidebarComponent selectedNoteIndex={this.state.selectedNoteIndex} notes={this.state.notes} />
+        <SidebarComponent 
+          selectedNoteIndex={this.state.selectedNoteIndex} 
+          notes={this.state.notes}
+          deleteNote={this.deleteNote}
+          selectNote={this.selectNote}
+          newNote={this.newNote}
+        />
         <EditorComponent />
       </div>
     );
