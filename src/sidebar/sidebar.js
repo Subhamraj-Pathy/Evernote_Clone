@@ -40,8 +40,8 @@ class SidebarComponent extends Component {
         this.props.selectNote(n, i)
     }
     
-    deleteNote = () => {
-        console.log('Delete Note');
+    deleteNote = (n) => {
+        this.props.deleteNote(n)
     }
 
 
